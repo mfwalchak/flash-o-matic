@@ -22,47 +22,44 @@ export default function Study() {
 
     // set the deck state and load the deck with async/await function readDeck(deckId, signal)
     const [studyDeck, setStudyDeck] = useState({cards:[]}); //use a template object as the default useState until componetized with an if([]) check
+    const userId = useParams();
+    console.log(userId);
     useEffect(() => {
         async function getStudyDeck() {
-            const loadStudyDeck = await readDeck(2) //**TODO**2 is a placeholder. DYNAMICALLY UPDATE DECK.ID AS readDeck Param
+            const loadStudyDeck = await readDeck(userId)
             setStudyDeck(loadStudyDeck);
         } getStudyDeck();
-    }, []);
-    //console.log(studyDeck.cards)
+    }, [userId]);
+    console.log(studyDeck.cards)
 
 
-    // studyDeck is an OBJECT, the cards in it are an ARRAY
-    // use an if statement 
-    const studyDeckCards = studyDeck.cards.map((card) => {
-        return (
-            <div className="card" style={{width: "18rem"}}>
+    // // studyDeck is an OBJECT, the cards in it are an ARRAY
+    const studyDeckCards = studyDeck.cards.map((card, i) => (
+            <div className="card" style={{width: "18rem"}} key={i}>
             <div className="card-body">
             <h5 className="card-title">{card.id}</h5>
             <p className="card-text">{card.front}</p>
             <p className="card-text">{card.back}</p>
-            <Link to="#" className="btn btn-light">FLIP</Link>
-            <Link to="#" className="btn btn-light">NEXT</Link>
+            <button className="btn btn-light">FLIP</button>
+            <button className="btn btn-light">NEXT</button>
             </div>
-        </div>
-        )
-    })
-    //get current location from URL params
-    const location = useLocation();
+        </div>    
+    ))
     //current study deck is main screen name
     return (
         <div>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><Link to="/">Home</Link></li>
-                <li class="breadcrumb-item active" aria-current="page">{location}</li>
+                <li class="breadcrumb-item active" aria-current="page"></li>
             </ol>
         </nav>    
-        <div>
+        {/* <div>
             <h2>{studyDeck.name}</h2>
         </div>
         <div>
             {studyDeckCards}
-        </div>
+        </div> */}
         </div>
     )
 
