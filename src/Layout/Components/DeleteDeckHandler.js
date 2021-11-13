@@ -1,7 +1,6 @@
    import React, { useEffect } from "react";
+   import { useHistory } from "react-router";
    import { deleteDeck } from "../../utils/api";
-
-
 //    //create a delete handler function to delete a deck **MAKE COMPONENT
 //     function DeleteHandler(deckId, setDecks) {
 //         if (window.confirm("Are you sure?")){

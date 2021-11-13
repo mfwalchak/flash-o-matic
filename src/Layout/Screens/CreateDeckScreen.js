@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { createDeck } from "../../utils/api";
+import Breadcrumbs from "../Components/Breadcrumbs";
 
 // DONE! The path to this screen should be /decks/new.
-// There is a breadcrumb navigation bar with a link to home / followed by the text Create Deck (i.e., Home/Create Deck).
+// DONE! There is a breadcrumb navigation bar with a link to home / followed by the text Create Deck (i.e., Home/Create Deck).
 // DONE! A form is shown with the appropriate fields for creating a new deck.
 // DONE! The name field is an <input> field of type text.
 // DONE! The description field is a <textarea> field that can be multiple lines of text.
@@ -13,13 +14,12 @@ import { createDeck } from "../../utils/api";
 
 //**TODO** LINK  deck id to correct prop */
 export default function CreateDeck() {
+    //invoke the createDeck() function from API/index.js
+    
 
-    // const createHandler= ()=> {
-
-    //     createDeck(deck, signal)
-    // }
     return (
         <div>
+            <Breadcrumbs pagedId={"/Create Deck"}/>
             <h1>Create a New Deck</h1>
             <form>
                 <div className="formGroup">

@@ -35,7 +35,8 @@ export default function Home(){
                 const deckToDelete = await deleteDeck(deckId);
                 //setDecks(deckToDelete);
                 console.log(deckToDelete);
-            } deleteCurrentDeck().then(listExistingDecks());
+            } deleteCurrentDeck()
+                .then(listExistingDecks());
         } 
     };
         

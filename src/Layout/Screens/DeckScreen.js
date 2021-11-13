@@ -21,7 +21,7 @@ import { readDeck } from "../../utils/api";
 // has an “Edit” button that takes the user to the Edit Card screen when clicked.
 // has a “Delete” button that allows that card to be deleted.
 
-export default function Deck() {
+export default function Deck({ deckId }) {
     const [currentDeck, setCurrentDeck] = useState();
     useEffect(() => {
         async function getCurrentDeck() {
@@ -40,7 +40,7 @@ export default function Deck() {
                 <li class="breadcrumb-item active" aria-current="page">CURRENT_DECK_ID</li>
             </ol>
         </nav>
-        <Link to="/decks/:deckId/study" className="btn btn-primary">STUDY</Link>
+        <Link to={`/decks/${deckId}/study`} className="btn btn-primary">STUDY</Link>
         </>
     )
 }
