@@ -11,9 +11,6 @@
       "id": 2
     },
     {
-      "id": 3
-    },
-    {
       "id": 4
     },
     {
@@ -44,16 +41,6 @@
     {
       "name": "",
       "description": "",
-      "id": 10
-    },
-    {
-      "name": "",
-      "description": "",
-      "id": 11
-    },
-    {
-      "name": "",
-      "description": "",
       "id": 12
     },
     {
@@ -64,17 +51,7 @@
     {
       "name": "",
       "description": "",
-      "id": 14
-    },
-    {
-      "name": "",
-      "description": "",
       "id": 15
-    },
-    {
-      "name": "",
-      "description": "",
-      "id": 16
     }
   ],
   "cards": [

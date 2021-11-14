@@ -25,6 +25,7 @@ export default function Home(){
                 //setDecks(deckToDelete);
                 console.log(deckToDelete)
             } deleteCurrentDeck();
+            listExistingDecks();
             
         } 
     };
