@@ -1,19 +1,3 @@
-
-// DONE! The path to this screen should include the deckId (i.e., /decks/:deckId/study).
-// DONE! You must use the readDeck() function from src/utils/api/index.js to load the deck that is being studied.
-// DONE! There is a breadcrumb navigation bar with links to home /, followed by the name of the deck being studied and finally the text Study (e.g., Home/Rendering In React/Study).
-// DONE! The deck title (i.e., "Study: Rendering in React" ) is shown on the screen.
-// DONE! Cards are shown one at a time, front-side first.
-// DONE! A button at the bottom of each card "flips" it to the other side.
-// DONE! After flipping the card, the screen shows a next button (see the "Next button" section below) to continue to the next card.
-// DONE! After the final card in the deck has been shown, a message (see the "Restart prompt" section below) is shown offering the user the opportunity to restart the deck.
-// DONE! If the user does not restart the deck, they should return to the home screen.
-// Studying a deck with two or fewer cards should display a "Not enough cards" message (see the "Not enough cards" section below) and a button to add cards to the deck.
-// The Next button appears after the card is flipped.
-// Restart prompt when all cards are finished, a message using window.confirm() is shown and the user is offered the opportunity to restart the deck. 
-// If the user does not restart the deck, they return to the home screen.
-// Studying a Deck with two or fewer cards should display a "Not enough cards" message and a button to add cards to the deck.
-// Clicking the "Add Cards" button should take the user to the Add Card screen.
 import React, { useState, useEffect } from "react";
 import { readDeck } from "../../utils/api";
 import { Link, useParams } from "react-router-dom";
@@ -32,13 +16,11 @@ export default function Study() {
             .then(deck => setStudyDeck(deck))
                 setCurrentCard(0);
     }, [deckId])
-    //console.log(studyDeck);// an object {cards:[], description:"", id:Number, name:""}
-    //console.log(studyDeck.cards)// an array of object cards [{id:Number, front:"", back:"", deckId:Number}]
-    //console.log(studyDeck.cards[1]);// an object {back:"", deckId:Number, front:"", id:Number}
-    //console.log("Log StudyDeck from Study Screen", studyDeck);
 
     //-------------------------------------------------| this is important |-------------------------------------------//
-    //if you don't have a condition in place to account for an empty object your render will fail
+    //if you don't have a condition in place to account for an empty object your render will fail hence RETURN NULL.
+
+    //**TODO**EDGE CASE - DECK WITH NO CARDS IN IT RENDERS BLANK PAGE THROW ERROR AND RETURN TO HOME SCREEN */
     if (!studyDeck.cards.length) {
         return null;
     }
@@ -76,7 +58,7 @@ export default function Study() {
                     card={studyDeck.cards[currentCard]} 
                     currentCard={currentCard} 
                     nextHandler={nextHandler}
-                    deckSize={studyDeck.cards.length} /> {/*pass in the value of the individual card object for LoadCard to render*/}
+                    deckSize={studyDeck.cards.length} />
             </div>
             </>
         )

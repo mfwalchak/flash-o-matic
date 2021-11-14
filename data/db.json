@@ -9,14 +9,79 @@
       "name": "React Router",
       "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "name": "",
+      "description": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "description": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "description": "",
+      "id": 7
+    },
+    {
+      "name": "",
+      "description": "",
+      "id": 8
+    },
+    {
+      "name": "",
+      "description": "",
+      "id": 9
+    },
+    {
+      "name": "",
+      "description": "",
+      "id": 10
+    },
+    {
+      "name": "",
+      "description": "",
+      "id": 11
+    },
+    {
+      "name": "",
+      "description": "",
+      "id": 12
+    },
+    {
+      "name": "",
+      "description": "",
+      "id": 13
+    },
+    {
+      "name": "",
+      "description": "",
+      "id": 14
+    },
+    {
+      "name": "",
+      "description": "",
+      "id": 15
+    },
+    {
+      "name": "",
+      "description": "",
+      "id": 16
     }
   ],
   "cards": [
     {
-      "id": 1,
-      "front": "Differentiate between Real DOM and Virtual DOM.",
-      "back": "Virtual DOM updates are faster but do not directly update the HTML",
-      "deckId": 1
+      "front": "DIFFERENTIATE THIS BITCH!",
+      "deckId": 1,
+      "id": 1
     },
     {
       "id": 2,
@@ -41,19 +106,6 @@
       "back": "Renders the first matching child <Route> ",
       "deckId": 2,
       "id": 5
-    },
-    {
-      "cards": [],
-      "front": "b",
-      "back": "b",
-      "deckId": 1,
-      "id": 7
-    },
-    {
-      "front": "fasdfdfsdaf",
-      "back": "fasfdsfasdfasd",
-      "deckId": 2,
-      "id": 8
     }
   ]
 }

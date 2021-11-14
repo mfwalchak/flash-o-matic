@@ -8,7 +8,7 @@ const API_BASE_URL = process.env.API_BASE_URL || "http://localhost:5000";
 /**
  * Defines the default headers for these functions to work with `json-server`
  */
-const headers = new Headers();
+export const headers = new Headers();
 headers.append("Content-Type", "application/json");
 
 /**
@@ -21,7 +21,7 @@ headers.append("Content-Type", "application/json");
  * @returns {*}
  *  a copy of the deck instance with the `cards` property removed.
  */
-function stripCards(deck) {
+export function stripCards(deck) {
   const { cards, ...deckWithoutCards } = deck;
   return deckWithoutCards;
 }
@@ -42,7 +42,7 @@ function stripCards(deck) {
  *  If the response is not in the 200 - 399 range the promise is rejected.
  */
 
-async function fetchJson(url, options, onCancel) {
+export async function fetchJson(url, options, onCancel) {
   try {
     const response = await fetch(url, options);
 

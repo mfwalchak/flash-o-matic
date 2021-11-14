@@ -40,7 +40,7 @@ function handleEditCard(front, back) {}
             <div><Breadcrumbs 
             crumbs={[{linkPath:"/", label: Home},
             {linkPath: `/decks/${deckId}` lable: Deck},
-            {label: "Add Card"}]}</div>
+            {label: "Add Card"}]}></Breadcrumbs></div>
             <>Home &gt; {deck.name} &gt; Edit Card</>
         <div>
             <header><h1>Edit Card</h1></header>

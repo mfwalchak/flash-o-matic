@@ -1,5 +1,5 @@
 import { readDeck } from "../../utils/api";
-import LoadCard from "./Cards";
+import LoadCard from "./LoadCard";
 import { Link, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react"
 
