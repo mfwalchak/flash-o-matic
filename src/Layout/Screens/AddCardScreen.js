@@ -1,3 +1,4 @@
+import React from "react";
 import AddACard from "../Components/AddCardForm"
 import { useParams } from "react-router-dom";
 // The path to this screen should include the deckId (i.e., /decks/:deckId/cards/new).
@@ -11,11 +12,11 @@ export default function AddCard() {
   const {deckId} = useParams();
     return (
         <>
-        <h1>ADD A NEW CARD</h1>
+        <h1>Add Card</h1>
         <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">{deckId} / Add Card</li>
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item"><a href="/">Home</a></li>
+          <li className="breadcrumb-item active" aria-current="page">{deckId} / Add Card</li>
         </ol>
       </nav>
       <AddACard />

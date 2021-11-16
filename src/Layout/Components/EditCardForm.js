@@ -26,10 +26,10 @@ export default function EditACard() {
             .catch(err => console.log(err));
     }, [deckId, cardId]);
 // the same thing with the card setup
-async function handleEditCard(front, back) {
+function handleEditCard(front, back) {
 
-    const cardUpdated = await updateCard({ front, back, deckId: Number(deckId), id: Number(cardId) }); //or use deck.id and card.id if you don't need to coerce datatype
-    history.push(redirectUrl);
+    updateCard({ front, back, deckId: Number(deckId), id: Number(cardId) }) //or use deck.id and card.id if you don't need to coerce datatype
+        .then(history.push(redirectUrl));
 }
 
 
@@ -44,6 +44,8 @@ async function handleEditCard(front, back) {
             <header><h1>Edit Card</h1></header>
         </div>
         <CardForm 
+        initialFront={card.front}
+        initialBack={card.back}
         onSubmit={handleEditCard}
         onCancelUrl={redirectUrl}
         onCancelUrl="Cancel"

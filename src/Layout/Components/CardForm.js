@@ -4,7 +4,8 @@ import React, { useEffect, useState } from "react";
 import { readCard } from "../../utils/api";
 
 export default function CardForm({ 
-    onSubmit, 
+    onSubmit,
+    card,
     // onCancelUrl,
     // onCancelLabel, 
     formType,
@@ -34,22 +35,27 @@ useEffect(() => {
 //     }
 // }
 //
+    
+    
+    console.log(initialFront, initialBack);
     async function handleSubmit(event) {
         event.preventDefault();
+        //console.log("HandleSubmit:", card, front, back)
         await onSubmit(front, back);
         setFront("");
         setBack("");
+        //add a cleanup function here
     }
     return (
         <>
         <form onSubmit={handleSubmit}>
             <div>
                 <label htmlFor="card-front">Front:</label>
-                <textarea value={front} onChange={evt => setFront(evt.target.value)} name="front" id="card-front" cols="30" rows="10"></textarea>
+                <textarea defaultValue={initialFront} onChange={evt => setFront(evt.target.value)} name="front" id="card-front" cols="30" rows="10"></textarea>
             </div>
             <div>
                 <label htmlFor="card-back">Front:</label>
-                <textarea value={back} onChange={evt => setBack(evt.target.value)} name="back" id="card-back" cols="30" rows="10"></textarea>
+                <textarea defaultValue={initialBack} onChange={evt => setBack(evt.target.value)} name="back" id="card-back" cols="30" rows="10"></textarea>
             </div>
             <div>
                 

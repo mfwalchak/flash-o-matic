@@ -11,9 +11,9 @@
       "id": 2
     },
     {
-      "name": "Farm Boy",
-      "description": "Fetch me that pitcher.",
-      "id": 10
+      "id": 10,
+      "name": "Farm Boyz in the hood",
+      "description": "Fetch me that pitcher muthafucka."
     }
   ],
   "cards": [
@@ -42,14 +42,14 @@
       "id": 5
     },
     {
-      "front": "Fetch me that pitcher!",
-      "back": "As you wish.",
+      "front": "Bitch! Fetch me that pitcher.",
+      "back": "You wish muthafucka.",
       "deckId": 10,
       "id": 8
     },
     {
       "front": "Humperdink!",
-      "back": "Humperdrinkhumperdink!",
+      "back": "Humperdinkhumperdink!",
       "deckId": 10,
       "id": 9
     },

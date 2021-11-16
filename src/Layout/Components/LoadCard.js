@@ -32,7 +32,7 @@ function LoadCard({ card, nextHandler, currentCard, deckSize }) { // card is an 
             <>
             <div className="card" style={{width: "50vw"}} key={card}>
             <div className="card-body">
-            <h5 className="card-title">{currentCard + 1} of {deckSize}</h5>
+            <h5 className="card-title">Card {currentCard + 1} of {deckSize}</h5>
             <p className="card-text">{cardText}</p>
             <p className="card-text"></p>
             <button className="btn btn-light" onClick={flipHandler}>FLIP</button>

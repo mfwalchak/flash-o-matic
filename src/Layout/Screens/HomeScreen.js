@@ -29,11 +29,11 @@ export default function Home(){
         
     //map the existing decks and access their key:values.
     const existingDeckList = decks.map((deck, i) =>(
-        <div className="container p-3 my-3 border">
-            <ul key={i}>
-                <li>Cards: {deck.cards.length}</li>
-                <li>{deck.name}</li>
-                <li>{deck.description}</li>
+        <div key={i} className="container p-3 my-3 border">
+            <ul>
+                <li key={deck.cards.length}>{deck.cards.length} cards</li>
+                <li key={deck.name}>{deck.name}</li>
+                <li key={deck.description}>{deck.description}</li>
             </ul>
         <Link to={`/decks/${deck.id}/study`} className="btn btn-primary">STUDY</Link>
         <Link to={`/decks/${deck.id}`} className="btn btn-primary">VIEW</Link>

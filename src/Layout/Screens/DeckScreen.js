@@ -54,10 +54,10 @@ export default function Deck() {
         //map the existing cards and render to the list
         //**TODO** MAKE THIS IT'S OWN COMPONENT - THIS IS COPIED AND REUSED FROM THE DECK MAPPER ON HOME */
         const existingCardList = currentDeck.cards.map((card, i) =>(
-            <div className="container p-3 my-3 border">
-                <ul key={i}>
-                    <li>Front: {card.front}</li>
-                    <li>Back: {card.back}</li>
+            <div key={i} className="container p-3 my-3 border">
+                <ul>
+                    <li key={card.front} label="front">{card.front}</li>
+                    <li key={card.back} label="back">{card.back}</li>
                 </ul>
             <Link to={`/decks/${deckId}/cards/${card.id}/edit`} className="btn btn-dark">EDIT</Link>
             <DeleteButton deleteHandler={deleteHandlerCard} deckId={card.id} />
@@ -67,9 +67,9 @@ export default function Deck() {
     return (
         <>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{currentDeck.name}</li>
+            <ol className="breadcrumb">
+                <li className="breadcrumb-item"><a href="/">Home</a></li>
+                <li className="breadcrumb-item active" aria-current="page">{currentDeck.name}</li>
             </ol>
         </nav>
         <h2>Viewing Deck - {currentDeck.name}</h2>
