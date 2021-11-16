@@ -5,44 +5,49 @@ import Breadcrumbs from "../Components/Breadcrumbs";
 import { stripCards, fetchJson, headers } from "./../../utils/api/index";
 
 
-// DONE! The path to this screen should be /decks/new.
-// DONE! There is a breadcrumb navigation bar with a link to home / followed by the text Create Deck (i.e., Home/Create Deck).
-// DONE! A form is shown with the appropriate fields for creating a new deck.
-// DONE! The name field is an <input> field of type text.
-// DONE! The description field is a <textarea> field that can be multiple lines of text.
-// If the user clicks "submit", the new deck is added to the database
-// If the user clicks "submit" the user is taken to the Deck screen.
-// DONE! If the user clicks "cancel", the user is taken to the Home screen.
-
+//SUBMIT BUTTON NEEDS TO REDIRECT USER TO THE NEW DECK PAGE
+//**TODO BUGFIX** Home screen does not refresh after form submission */
 //**TODO** LINK  deck id to correct prop */
+
 export default function CreateDeck() {
-    //invoke the createDeck() function from API/index.js
         const [name, setName] = useState("");
         const [description, setDescription] = useState("");
-        const createHandler = (event) => setName(event.target.value)
-        const deckId = ""
-
+        const [redirectUrl, setRedirectUrl] = useState("/")
+        const handleNameFieldChange = (event) => setName(event.target.value);
+        const handleDescFieldChange = (event) => setDescription(event.target.value);
         const deck = {name, description};
-          createDeck(deck);
-          console.log(createDeck);
+        const history = useHistory();
 
+        //onSubmit creates a new deck
+        const createHandler = (event) => {
+            event.preventDefault();
+            async function deckIsBeingCreated(){
+                const aNewDeck = await createDeck(deck);
+            } deckIsBeingCreated();
+        }
 
     return (
         <div>
-            <Breadcrumbs pagedId={"/Create Deck"}/>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><Link to="/">Home</Link></li>
+                    <li class="breadcrumb-item active" aria-current="page">Create Deck</li>
+                </ol>
+            </nav>
             <h1>Create a New Deck</h1>
             <form onSubmit={createHandler}>
                 <div className="formGroup">
-                    <label for="name">Name</label>
-                    <input type="text" className="formControl" id="name" placeholder="Enter Deck Name"></input>
+                    <label htmlFor="name">Name</label>
+                    <input type="text" className="formControl" id="name" placeholder="Enter Deck Name" onChange={handleNameFieldChange}></input>
                 </div>
                 <div className="formGroup">
-                    <label for="description">Description</label>
-                    <textarea className="formControl" id="description" placeholder="Enter Deck Description"></textarea>
+                    <label htmlFor="description">Description</label>
+                    <textarea className="formControl" id="description" placeholder="Enter Deck Description" onChange={handleDescFieldChange}></textarea>
                 </div>
+            <button type="button" className="btn btn-light" onClick={()=>history.push("/")}>CANCEL</button>
+            <button type="submit" className="btn btn-primary">SUBMIT</button> 
             </form>
-            <Link to="/" className="btn btn-light">CANCEL</Link>
-            <Link to={`/decks/${deckId}`} className="btn btn-primary">SUBMIT</Link> 
+
         </div>
     )
 }

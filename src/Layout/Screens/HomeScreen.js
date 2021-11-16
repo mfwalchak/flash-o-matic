@@ -3,9 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import DeleteButton from "../Components/DeleteDeckHandler";
 
-// **TODO** Deck list refreshes after delete without crashing page.
-
-
 export default function Home(){
 
     //retrieve existing decks with the listDecks function **TODO** MAKE IT'S OWN COMPONENT
@@ -53,7 +50,7 @@ export default function Home(){
             <a href="/decks/new" className="btn btn-light">CREATE NEW</a>
             {/* 
             //each deck is it's own container */}
-            <div classname="container">
+            <div className="container">
                 {existingDeckList}
             </div>
         </div>

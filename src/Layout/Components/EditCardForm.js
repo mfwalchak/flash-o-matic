@@ -1,16 +1,17 @@
-//edit or create cards with this form
-//what is the reusable piece? TITLE belongs on the page
-//but the form itsef is reusable
+// Card front/back text should be updated after saving
+// Current text should appear in the text area when edit screen laods
 //**TODO** add new routes for this and the other Form Add Card
 //to the index.js ROUTING
 
 
 import React, { useState, useEffect } from "react";
 import { readDeck } from "../../utils/api"
-import { useParams } from "react-router-dom"
+import { useParams, useHistory } from "react-router-dom"
 import CardForm from "./CardForm";
+import { updateCard, readCard } from "../../utils/api";
 //cards new
-export default function CardsNew () {
+export default function EditACard() {
+    const history = useHistory();
     const { deckId, cardId } = useParams();
     const [deck, setDeck ] = useState({})
     const [card, setCard ] = useState({})
@@ -25,8 +26,10 @@ export default function CardsNew () {
             .catch(err => console.log(err));
     }, [deckId, cardId]);
 // the same thing with the card setup
-function handleEditCard(front, back) {}
-    updateCard({ front, back deckId: Number(deckId) id: Number(cardId) }) //or use deck.id and card.id if you don't need to coerce datatype
+async function handleEditCard(front, back) {
+
+    const cardUpdated = await updateCard({ front, back, deckId: Number(deckId), id: Number(cardId) }); //or use deck.id and card.id if you don't need to coerce datatype
+    history.push(redirectUrl);
 }
 
 
@@ -37,11 +40,6 @@ function handleEditCard(front, back) {}
 
     return (
         <>
-            <div><Breadcrumbs 
-            crumbs={[{linkPath:"/", label: Home},
-            {linkPath: `/decks/${deckId}` lable: Deck},
-            {label: "Add Card"}]}></Breadcrumbs></div>
-            <>Home &gt; {deck.name} &gt; Edit Card</>
         <div>
             <header><h1>Edit Card</h1></header>
         </div>

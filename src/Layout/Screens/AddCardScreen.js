@@ -1,4 +1,5 @@
 import AddACard from "../Components/AddCardForm"
+import { useParams } from "react-router-dom";
 // The path to this screen should include the deckId (i.e., /decks/:deckId/cards/new).
 // You must use the readDeck() function from src/utils/api/index.js to load the deck that you're adding the card to.
 // There is a breadcrumb navigation bar with a link to home /, followed by the name of the deck to which the cards are being added, and finally the text Add Card (e.g., Home/React Router/Add Card).
@@ -7,13 +8,14 @@ import AddACard from "../Components/AddCardForm"
 // If the user clicks "Done", the user is taken to the Deck screen.
 
 export default function AddCard() {
+  const {deckId} = useParams();
     return (
         <>
-        <h1>ADD_A_CARD_HERE</h1>
+        <h1>ADD A NEW CARD</h1>
         <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">CURRENT_DECK_ID / Add Card</li>
+          <li class="breadcrumb-item active" aria-current="page">{deckId} / Add Card</li>
         </ol>
       </nav>
       <AddACard />

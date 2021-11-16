@@ -1,12 +1,12 @@
 
-import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { readCard } from "../../utils/api";
 
 export default function CardForm({ 
     onSubmit, 
-    onCancelUrl,
-    onCancelLabel, 
+    // onCancelUrl,
+    // onCancelLabel, 
     formType,
     submitRedirectUrl, 
     initialBack, 
@@ -15,7 +15,7 @@ export default function CardForm({
 const [front, setFront ] = useState(initialFront);
 const [back, setBack] = useState(initialBack);
 const history = useHistory();
-
+const { deckId } = useParams();
 //this is the switching function for EDIT as opposed to CREATE
 useEffect(() => {
     setFront(initialFront);
@@ -23,17 +23,23 @@ useEffect(() => {
 }, [initialFront, initialBack]
 );
 
-async function handleSubmit(event) {
-    event.preventDefault();
-    await onSubmit(front, back);
-    if (formType === "edit"){
-        history.push(submitRedirectUrl)
-    } else {
-        setFront("")
-        setBack("")
-    }
-}
+// async function handleSubmit(event) {
+//     event.preventDefault();
+//     await onSubmit(front, back);
+//     if (formType === "edit"){
+//         history.push(submitRedirectUrl)
+//     } else {
+//         setFront("")
+//         setBack("")
+//     }
+// }
 //
+    async function handleSubmit(event) {
+        event.preventDefault();
+        await onSubmit(front, back);
+        setFront("");
+        setBack("");
+    }
     return (
         <>
         <form onSubmit={handleSubmit}>
@@ -46,9 +52,9 @@ async function handleSubmit(event) {
                 <textarea value={back} onChange={evt => setBack(evt.target.value)} name="back" id="card-back" cols="30" rows="10"></textarea>
             </div>
             <div>
-                <Link to={onCancelUrl}>
-                    <button className="btn btn-secondary">Cancel</button>
-                </Link>
+                
+                    <Link to={`/decks/${deckId}`} className="btn btn-secondary">Done</Link>
+                
                     <button className="btn btn-secondary">Save</button>
             </div>
         </form>

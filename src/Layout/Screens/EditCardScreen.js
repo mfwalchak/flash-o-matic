@@ -17,6 +17,7 @@ import React, { useState, useEffect } from "react";
 import { readDeck, readCard, updateCard } from "../../utils/api"
 import { useParams } from "react-router-dom"
 import CardForm from "../Components/CardForm";
+import EditACard from "../Components/EditCardForm";
 
 export default function EditCard() {
     const { deckId, cardId } = useParams();
@@ -44,7 +45,13 @@ function handleEditCard(front, back) {
     //so we'll want to send in some props and conditions
     return (
         <>
-        <CardForm 
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{deck.name} / Edit Card {cardId} </li>
+            </ol>
+      </nav>
+        <EditACard
         onSubmit={handleEditCard}
         onCancelUrl={redirectUrl}
         onCancelUrl="Cancel"

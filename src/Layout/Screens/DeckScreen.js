@@ -69,7 +69,7 @@ export default function Deck() {
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">CURRENT_DECK_ID</li>
+                <li class="breadcrumb-item active" aria-current="page">{currentDeck.name}</li>
             </ol>
         </nav>
         <h2>Viewing Deck - {currentDeck.name}</h2>
@@ -79,7 +79,7 @@ export default function Deck() {
         <Link to={`/decks/${deckId}/edit`} className="btn btn-dark">EDIT</Link>
         <Link to={`/decks/${deckId}/cards/new`} className="btn btn-primary">ADD CARDS</Link>
         <DeleteButton deleteHandler={deleteHandlerDeck} deckId={deckId}/>
-        <div classname="container">
+        <div className="container">
                 {existingCardList}
             </div>
         </>
