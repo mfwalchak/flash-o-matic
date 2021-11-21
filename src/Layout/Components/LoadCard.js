@@ -24,7 +24,7 @@ function LoadCard({ card, nextHandler, currentCard, deckSize }) { // card is an 
             }
         }
     }
-    const nextButton = flipSide ? null : <button className="btn btn-light" onClick={handleYourShift}>NEXT</button>;
+    const nextButton = flipSide ? null : <button className="btn btn-warning" onClick={handleYourShift}>NEXT</button>;
     const cardText = flipSide ? front : back;
 
         return(
@@ -35,8 +35,11 @@ function LoadCard({ card, nextHandler, currentCard, deckSize }) { // card is an 
             <h5 className="card-title">Card {currentCard + 1} of {deckSize}</h5>
             <p className="card-text">{cardText}</p>
             <p className="card-text"></p>
-            <button className="btn btn-light" onClick={flipHandler}>FLIP</button>
+            <div className="btn-group">
+            <button className="btn btn-primary" onClick={flipHandler}>FLIP</button>
             <div>{nextButton}</div>
+            </div>
+
             </div>
             </div>
             </>

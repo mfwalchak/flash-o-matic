@@ -9,11 +9,6 @@
       "name": "React Router",
       "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2
-    },
-    {
-      "id": 10,
-      "name": "Farm Boyz in the hood",
-      "description": "Fetch me that pitcher muthafucka."
     }
   ],
   "cards": [
@@ -40,60 +35,6 @@
       "back": "Renders the first matching child <Route> ",
       "deckId": 2,
       "id": 5
-    },
-    {
-      "front": "Bitch! Fetch me that pitcher.",
-      "back": "You wish muthafucka.",
-      "deckId": 10,
-      "id": 8
-    },
-    {
-      "front": "Humperdink!",
-      "back": "Humperdinkhumperdink!",
-      "deckId": 10,
-      "id": 9
-    },
-    {
-      "front": "Fezzik",
-      "back": "Anybody waanna peanut?",
-      "deckId": 10,
-      "id": 13
-    },
-    {
-      "front": "Dread Pirate",
-      "back": "Roberts!",
-      "deckId": 10,
-      "id": 14
-    },
-    {
-      "front": "She kissed me!",
-      "back": "Mawwwiage.",
-      "deckId": 10,
-      "id": 15
-    },
-    {
-      "front": "Come for your....",
-      "back": "Souls!",
-      "deckId": 10,
-      "id": 16
-    },
-    {
-      "front": "fsdafsdf",
-      "back": "fdsafsdf",
-      "deckId": 10,
-      "id": 21
-    },
-    {
-      "front": "fdfsdaf",
-      "back": "fdsafdsafsda",
-      "deckId": 10,
-      "id": 24
-    },
-    {
-      "front": "yay!",
-      "back": "no seriously!",
-      "deckId": 10,
-      "id": 31
     }
   ]
 }

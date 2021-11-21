@@ -1,6 +1,3 @@
-// ON CANCEL Reroute to previous page currently only works from EditCard
-
-
 import React, { useState, useEffect } from "react";
 import { readDeck, createCard } from "../../utils/api"
 import { useParams } from "react-router-dom"
@@ -21,22 +18,6 @@ export default function AddACard({ onSubmit }) {
     const [front, setFront ] = useState("");
     const [back, setBack] = useState("");
     
-    // async function handleSubmit(event) {
-    //     event.preventDefault();
-    //     await onSubmit(front, back);
-    //     setFront("");
-    //     setBack("");
-    // }
-    //onSubmit always returns a promise so we can use .then
-//to clear the form and reset the STATE of the form
-// function handleAddCard(front, back) {
-//     event.preventDefault
-//     onSubmit(front, back)
-//         .then(()=>
-//             setFront("")
-//             setBack(""
-// }; //this should be called on form submission from createDeck
-
 
     function handleAddCard(front, back) {
         console.log("Add card form submitted");
@@ -48,9 +29,6 @@ export default function AddACard({ onSubmit }) {
 
     //how can we clear the form? We ran createCard so once it's
     //done got ahead and execute the form
-
-    //form event handler will be different based on which form
-    //so we'll want to send in some props and conditions
     const redirectUrl = `/decks/${deckId}`
 
     return (
@@ -62,12 +40,8 @@ export default function AddACard({ onSubmit }) {
         <CardForm 
         onSubmit={handleAddCard}
         formType="edit"
-        // submitRedirectUrl={redirectUrl}
+        submitRedirectUrl={redirectUrl}
          />
         </>
     )
 }
-
-
-
-//cards edit
