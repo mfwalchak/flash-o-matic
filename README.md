@@ -1,5 +1,10 @@
 # Flash-o-matic
 
-The Flash-o-matic study system features customizable study decks and cards,
-responsive design and quick rendering using React, and witty quips in every
-pop-up window!
+A customizable study card system.
+
+Create a new deck on any subject, add
+and edit cards, and flip through them
+to study your topic.
+
+This is my first project using React
+for rendering logic and React Router for pathing.
