@@ -7,4 +7,4 @@ and edit cards, and flip through them
 to study your topic.
 
 This is my first project using React
-for rendering logic and React Router for pathing.
+for rendering logic and React Router for path control.
