@@ -1,15 +1,16 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
 export default function CardForm({
   onSubmit,
-
+  redirectUrl,
   initialBack,
   initialFront,
 }) {
   const [front, setFront] = useState(initialFront);
   const [back, setBack] = useState(initialBack);
   const { deckId } = useParams();
+  const history = useHistory();
 
   useEffect(() => {
     setFront(initialFront);
@@ -22,6 +23,7 @@ export default function CardForm({
     await onSubmit(front, back);
     setFront("");
     setBack("");
+    history.push(redirectUrl);
     //**TODO** add a cleanup function here
   }
   return (
@@ -39,7 +41,7 @@ export default function CardForm({
           ></textarea>
         </div>
         <div>
-          <label htmlFor="card-back">Front:</label>
+          <label htmlFor="card-back">Back:</label>
           <textarea
             defaultValue={initialBack}
             onChange={(evt) => setBack(evt.target.value)}

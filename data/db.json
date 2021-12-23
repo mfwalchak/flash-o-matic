@@ -9,6 +9,11 @@
       "name": "React Router",
       "description": "React Router is a collection of navigational components that compose declaratively with your application.",
       "id": 2
+    },
+    {
+      "name": "Recursion",
+      "description": "Concept and Problems in Recursion",
+      "id": 3
     }
   ],
   "cards": [
@@ -48,6 +53,24 @@
       "back": "b",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "Fibonacci Sequence",
+      "back": "A series of numbers in which each value is equal to the sum of the preceding 2 values.\nf(n) = f(n-1) + f(n-2)",
+      "deckId": 3,
+      "id": 8
+    },
+    {
+      "front": "Big 0 Notation",
+      "back": "Expression of algorithmic complexity as related to size of input.",
+      "deckId": 3,
+      "id": 9
+    },
+    {
+      "front": "0(n)",
+      "back": "Formula representing linear growth (complexity increases linearly in relation to input)",
+      "deckId": 3,
+      "id": 10
     }
   ]
 }
