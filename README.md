@@ -1,10 +1,7 @@
 # Flash-o-matic
 
-A customizable study card system.
+[Click here to run the app](https://flashomatic.herokuapp.com/)
 
-Create a new deck on any subject, add
-and edit cards, and flip through them
-to study your topic.
+Create a new deck for any subject! 
 
-This is my first project using React
-for rendering logic and React Router for path control.
+Add or edit cards and click "study" to flip through cards!
