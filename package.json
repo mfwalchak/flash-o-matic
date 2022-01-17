@@ -28,7 +28,7 @@
     "start:server": "json-server ./data/db.json",
     "start:solution": "npm run -it docker:build && npm run docker:run",
     "test": "react-scripts test",
-    "test:solution": "npm run docker:build && npm run docker:test",
+    "test:solution": "npm run docker:build && npm run docker:test"
   },
   "eslintConfig": {
     "extends": "react-app"
