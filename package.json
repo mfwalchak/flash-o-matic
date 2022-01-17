@@ -26,7 +26,9 @@
     "start:server": "json-server ./data/db.json",
     "start:solution": "npm run -it docker:build && npm run docker:run",
     "test": "react-scripts test",
-    "test:solution": "npm run docker:build && npm run docker:test"
+    "test:solution": "npm run docker:build && npm run docker:test",
+    "concurrently": "^5.3.0",
+    "json-server": "^0.16.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,9 +44,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "concurrently": "^5.3.0",
-    "json-server": "^0.16.1"
   }
 }
